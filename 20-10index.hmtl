@@ -35,27 +35,26 @@
       text-shadow: 1px 1px 6px white;
       margin-top: 12px;
     }
+ /* 💗 Trái tim nền sau chữ */
+  .heart-bg {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 220px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, #ff4d79, #ff1a66);
+    clip-path: path("M 100 30 C 100 0, 0 0, 0 60 C 0 100, 100 180, 100 180 C 100 180, 200 100, 200 60 C 200 0, 100 0, 100 30 Z");
+    opacity: 0.4;
+    animation: pulse 2.5s infinite ease-in-out;
+    z-index: 1;
+  }
 
-    /* Trái tim */
-    .heart {
-      width: clamp(40px, 8vw, 60px);
-      height: clamp(40px, 8vw, 60px);
-      background-color: red;
-      transform: rotate(-45deg);
-      position: relative;
-      animation: beat 1s infinite;
-    }
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.35; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.55; }
+  }
 
-    .heart::before, .heart::after {
-      content: "";
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      background-color: red;
-      border-radius: 50%;
-    }
-    .heart::before { top: -50%; left: 0; }
-    .heart::after { top: 0; left: 50%; }
 
     /* Hoa hồng hai bên */
     .rose {
@@ -142,3 +141,4 @@
   </script>
 </body>
 </html>
+
