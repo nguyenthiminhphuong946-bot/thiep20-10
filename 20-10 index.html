@@ -28,37 +28,25 @@
       text-shadow: 1px 1px 6px white;
     }
 
-    /* Hiệu ứng trái tim lớn */
-    .heart {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 150px;
-      height: 150px;
-      background-color: red;
-      transform: translate(-50%, -50%) rotate(-45deg);
-      animation: beat 1s infinite;
-    }
+    /* 💗 Trái tim nền sau chữ */
+  .heart-bg {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 220px;
+    height: 200px;
+    background: radial-gradient(circle at 30% 30%, #ff4d79, #ff1a66);
+    clip-path: path("M 100 30 C 100 0, 0 0, 0 60 C 0 100, 100 180, 100 180 C 100 180, 200 100, 200 60 C 200 0, 100 0, 100 30 Z");
+    opacity: 0.4;
+    animation: pulse 2.5s infinite ease-in-out;
+    z-index: 1;
+  }
 
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      background-color: red;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -75px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: 75px;
-      top: 0;
-    }
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.35; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.55; }
+  }
 
     /* Hoa hồng hai bên */
     .rose {
@@ -149,4 +137,5 @@
     });
   </script>
 </body>
+
 </html>
